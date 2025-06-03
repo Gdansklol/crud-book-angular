@@ -52,7 +52,6 @@ npm start
 
 Öppna i webbläsaren: http://localhost:4200
 ```
-### Struktur
 
 4. Deploy i Varcel 
 ```bash
@@ -70,6 +69,8 @@ npm run build
 - Build-kommando: ng build
 
 - Output-katalog: dist/[projektnamn]
+
+### Struktur
 
 ```bash
 src/
