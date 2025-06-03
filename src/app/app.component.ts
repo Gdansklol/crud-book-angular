@@ -9,6 +9,7 @@ import { NavigationBarComponent } from './components/navigation-bar/navigation-b
   standalone: true,
   imports: [RouterOutlet, NavigationBarComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  
 })
 export class AppComponent {}
