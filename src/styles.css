@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .navigation-bar {
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  border-bottom: 1px solid #333;
+}
+
+body.dark-mode .nav-link {
+  color: #ffffff !important;
+}
+
+body.dark-mode .nav-link:hover {
+  color: #81c784 !important;
+}
+
+body.dark-mode .btn-outline-light {
+  border-color: #ccc;
+  color: #ffffff;
+}

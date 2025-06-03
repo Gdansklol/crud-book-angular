@@ -1,13 +1,14 @@
+// src/app/app.component.ts
+
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true, // Angular 15+ standalone sätt
-  imports: [RouterOutlet], // Absolut nödvändigt
+  standalone: true,
+  imports: [RouterOutlet, NavigationBarComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'crud-temp';
-}
+export class AppComponent {}

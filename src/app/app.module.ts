@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet], // ✅ 이 부분 추가!
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+import { AppComponent } from './app.component';
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot([]),
+    AppComponent,               
+    NavigationBarComponent     
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppComponent {
-  title = 'crud-temp';
-}
+export class AppModule {}
