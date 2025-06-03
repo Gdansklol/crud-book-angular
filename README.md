@@ -1,59 +1,105 @@
-# CrudTemp
+# Responsiv CRUD-applikation med tokenhantering
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+## Byggd med Angular 18 för front-end
 
-## Development server
+### Krav
+- En lista över böcker (CRUD-funktionalitet)
 
-To start a local development server, run:
+- Formulär för att lägga till, redigera och radera böcker
+
+- Tokenbaserad autentisering (JWT)
+
+- Separat vy för "Mina citat"
+
+- Responsiv design för alla skärmstorlekar
+
+- Användning av Bootstrap och Font Awesome för layout och UI
+
+### Setup & Deploy – Tekniska steg
+
+1. Angular CLI installation
+```bash
+npm install -g @angular/cli
+
+```
+Eller installera projektet lokalt:
 
 ```bash
-ng serve
+npx @angular/cli@latest new crud-temp --routing --style=css
+
 ```
+> OBS! Du kan inte skapa direkt i den aktuella katalogen (.). 
+Du måste alltid skapa en ny mapp, flytta till den och sedan skapa.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+2. Ansluter Lokalt Git och GitHub
 
 ```bash
-ng generate component component-name
-```
+git init
+git remote add origin https://github.com/DittAnvändarnamn/ditt-repo.git
+git add .
+git commit -m "init commit"
+git push -u origin main
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+```
+> Om felet: remote origin already exists eller repository not found 
+uppstår, kontrollera med git remote -v och korrigera.
+
+3. Köra Angular-utvecklingsservern
 
 ```bash
-ng generate --help
+npm install
+npm start
+
+Öppna i webbläsaren: http://localhost:4200
+```
+### Struktur
+
+4. Deploy i Varcel 
+```bash
+npm run build
 ```
 
-## Building
+- Använd dist/-katalogen efter build.
 
-To build the project run:
+- Åtkomst till https://vercel.com
+
+- Anslut GitHub-repository
+
+- Framework: Välj Angular
+
+- Build-kommando: ng build
+
+- Output-katalog: dist/[projektnamn]
 
 ```bash
-ng build
+src/
+│
+├── app/
+│   ├── components/       # UI-komponenter
+│   ├── pages/            # Bokvy, citatsida
+│   ├── services/         # API- och auth-tjänster
+│   ├── app.routes.ts     # Routing
+│   └── app.component.ts  # Rotkomponent
+│
+├── assets/               # Bilder, ikoner
+├── environments/         # API URL etc.
+└── main.ts               # Startpunkt
+
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Utmaning & lärande
 
-## Running unit tests
+### Technologies & Funktionalitet
+1. Angular 18 – komponentbaserad UI
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+2. Bootstrap – responsiv layout
 
-```bash
-ng test
-```
+3. Font Awesome – UI-ikoner
 
-## Running end-to-end tests
+4. JWT – autentisering
 
-For end-to-end (e2e) testing, run:
+5. RxJS – datahantering
 
-```bash
-ng e2e
-```
+6. Angular Router – klientbaserad navigation
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+###  Sammanfattning
