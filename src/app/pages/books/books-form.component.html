@@ -1,37 +1,100 @@
-<div class="container py-5 mt-5">
-    <h2>Add New Book</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div class="mb-3">
-        <label>Title</label>
-        <input class="form-control" [(ngModel)]="title" name="title" required />
-      </div>
+<main class="container py-5 mt-5">
+    <h2 class="mb-4">Add New Book</h2>
   
-      <div class="mb-3">
-        <label>Author</label>
-        <input class="form-control" [(ngModel)]="author" name="author" required />
-      </div>
+    <form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+      <fieldset class="mb-4">
+        <legend>Book Details</legend>
   
-      <div class="mb-3">
-        <label>Published Date</label>
-        <input type="date" class="form-control" [(ngModel)]="publishedDate" name="publishedDate" />
-      </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input id="title" class="form-control" [(ngModel)]="title" name="title" required />
+        </div>
   
-      <div class="mb-3">
-        <label>Pages</label>
-        <input type="number" class="form-control" [(ngModel)]="pages" name="pages" />
-      </div>
+        <div class="mb-3">
+          <label for="author" class="form-label">Author</label>
+          <input id="author" class="form-control" [(ngModel)]="author" name="author" required />
+        </div>
   
-      <div class="mb-3">
-        <label>Genre</label>
-        <input class="form-control" [(ngModel)]="genre" name="genre" />
-      </div>
+        <div class="mb-3">
+          <label for="publishedDate" class="form-label">Published Date</label>
+          <input id="publishedDate" type="date" class="form-control" [(ngModel)]="publishedDate" name="publishedDate" />
+        </div>
   
-      <div class="mb-3">
-        <label>Description</label>
-        <textarea class="form-control" rows="4" [(ngModel)]="description" name="description"></textarea>
-      </div>
+        <div class="mb-3">
+          <label for="pages" class="form-label">Pages</label>
+          <input
+            id="pages"
+            type="number"
+            class="form-control"
+            [(ngModel)]="pages"
+            name="pages"
+            required
+            min="1"
+            max="700"
+          />
+          <small class="form-text text-muted">Pages must be between 1 and 700.</small>
+        </div>
   
-      <button type="submit" class="btn btn-success">Save</button>
+        <div class="mb-3">
+          <label for="genre" class="form-label">Genre</label>
+          <select id="genre" class="form-select" [(ngModel)]="genre" name="genre" required>
+            <option value="" disabled>Choose genre</option>
+            <option value="Classic">Classic</option>
+            <option value="Fairy Tale">Fairy Tale</option>
+            <option value="Fantasy">Fantasy</option>
+          </select>
+        </div>
+  
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea id="description" class="form-control" rows="4" [(ngModel)]="description" name="description"></textarea>
+        </div>
+      </fieldset>
+  
+      <fieldset class="mb-4">
+        <legend>Book Image</legend>
+  
+        <section class="mb-3">
+          <label for="imageUrl" class="form-label">Image URL (optional)</label>
+          <input
+            type="url"
+            id="imageUrl"
+            class="form-control"
+            [(ngModel)]="imageUrl"
+            name="imageUrl"
+            placeholder="https://example.com/image.jpg"
+          />
+        </section>
+  
+        <section class="mb-3">
+          <label for="fileUpload" class="form-label">Upload Image File (optional)</label>
+          <input
+            type="file"
+            id="fileUpload"
+            class="form-control"
+            (change)="onFileSelected($event)"
+            accept="image/*"
+          />
+        </section>
+  
+        <article class="mb-3" *ngIf="imageUrl || imageFileDataUrl">
+          <label class="form-label">Image Preview</label><br />
+          <img
+            [src]="imageFileDataUrl || imageUrl"
+            alt="Book image preview"
+            class="img-fluid"
+            style="max-height: 200px;"
+          />
+        </article>
+      </fieldset>
+  
+      <button
+        type="submit"
+        class="btn btn-success"
+        [disabled]="!bookForm.form.valid || !isImageProvided"
+      >
+        Save
+      </button>
     </form>
-  </div>
+  </main>
   
