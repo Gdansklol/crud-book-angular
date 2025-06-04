@@ -1,0 +1,15 @@
+.footer {
+    background: linear-gradient(135deg, #2e7d32, #388e3c);
+    padding: 0.5rem 1rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: auto; 
+    border-top: 1px solid #222;
+  }
+  
+  :host-context(body.dark-mode) .footer {
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: #ffffff;
+    border-top: 1px solid #333;
+  }
+  

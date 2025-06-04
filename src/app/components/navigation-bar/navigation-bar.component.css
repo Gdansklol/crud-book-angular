@@ -1,53 +1,9 @@
-/* src/app/components/navigation-bar/navigation-bar.component.css*/
-
 .navigation-bar {
-  background: linear-gradient(135deg, #2e7d32, #388e3c); 
+  background: linear-gradient(135deg, #2e7d32, #388e3c);
   padding: 0.5rem 1rem;
 }
 
-.navbar-brand {
-  font-weight: bold;
-  font-size: 1.3rem;
-  color: #fff !important;
-  display: flex;
-  align-items: center;
-}
-
-.navbar-brand i {
-  margin-right: 8px;
-}
-
-.nav-link {
-  color: #f8f9fa !important;
-}
-
-.nav-link:hover {
-  color: #c8e6c9 !important;
-}
-
-
-/* dark mode body */
-body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-/* dark mode navbbar gradation */
-body.dark-mode .navigation-bar {
+:host-context(body.dark-mode) .navigation-bar {
   background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
   border-bottom: 1px solid #333;
-}
-
-/* text av dark mode*/
-body.dark-mode .nav-link {
-  color: #ffffff !important;
-}
-
-body.dark-mode .nav-link:hover {
-  color: #81c784 !important; 
-}
-
-body.dark-mode .btn-outline-light {
-  border-color: #ccc;
-  color: #ffffff;
 }

@@ -1,6 +1,31 @@
 .home-banner {
-    height: calc(100vh - 56px); /* Bootstrap navbar default height */
-    background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') center center / cover no-repeat;
-    padding: 2rem;
-  }
-  
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  background: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') center center / cover no-repeat;
+  background-attachment: fixed;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); 
+  padding: 2rem;
+}
+
+body.dark-mode .home-banner .banner-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.home-banner {
+  min-height: 60vh; /* instead of height */
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') center center / cover no-repeat;
+  background-attachment: fixed;
+}
+
