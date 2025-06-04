@@ -1,0 +1,12 @@
+/* src/app/pages/books/books.component.css */
+
+.books-page {
+    padding-top: 80px; 
+  }
+  
+  @media (max-width: 576px) {
+    .books-page {
+      padding-top: 100px;
+    }
+  }
+  

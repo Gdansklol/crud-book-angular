@@ -14,7 +14,10 @@
     "module": "esnext",
     "moduleResolution": "node",
     "baseUrl": "./",
-    "types": []
+    "types": [],
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -23,6 +26,7 @@
     "typeCheckHostBindings": true,
     "strictTemplates": true
   },
+  
   "files": [],
   "references": [
     {
