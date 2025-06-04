@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; 
+import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Book } from '../../models/book.model';
 import { BookService } from '../../services/book.service';
+import { RouterModule } from '@angular/router';
 
 declare var bootstrap: any;
 
@@ -12,7 +13,7 @@ declare var bootstrap: any;
   standalone: true,
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css'],
-  imports: [CommonModule, FontAwesomeModule] 
+  imports: [CommonModule, FontAwesomeModule, RouterModule] // ✅ RouterModule 추가
 })
 export class BooksComponent {
   books: Book[] = [];

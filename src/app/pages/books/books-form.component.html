@@ -1,0 +1,37 @@
+<div class="container py-5 mt-5">
+    <h2>Add New Book</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label>Title</label>
+        <input class="form-control" [(ngModel)]="title" name="title" required />
+      </div>
+  
+      <div class="mb-3">
+        <label>Author</label>
+        <input class="form-control" [(ngModel)]="author" name="author" required />
+      </div>
+  
+      <div class="mb-3">
+        <label>Published Date</label>
+        <input type="date" class="form-control" [(ngModel)]="publishedDate" name="publishedDate" />
+      </div>
+  
+      <div class="mb-3">
+        <label>Pages</label>
+        <input type="number" class="form-control" [(ngModel)]="pages" name="pages" />
+      </div>
+  
+      <div class="mb-3">
+        <label>Genre</label>
+        <input class="form-control" [(ngModel)]="genre" name="genre" />
+      </div>
+  
+      <div class="mb-3">
+        <label>Description</label>
+        <textarea class="form-control" rows="4" [(ngModel)]="description" name="description"></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-success">Save</button>
+    </form>
+  </div>
+  

@@ -1,17 +1,16 @@
 // src/app/app-routing.module.ts
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
+import { provideRouter } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
 import { BooksComponent } from './pages/books/books.component';
+import { BooksFormComponent } from './pages/books/books-form.component';
 import { QuotesComponent } from './pages/quotes/quotes.component';
 
-const routes: Routes = [
-  { path: '', redirectTo: '/books', pathMatch: 'full' },
+export const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'books', component: BooksComponent },
+  { path: 'books/add', component: BooksFormComponent },
   { path: 'quotes', component: QuotesComponent }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {}
+export const appRouting = provideRouter(routes);
