@@ -1,8 +1,13 @@
-<div class="home-banner d-flex flex-column justify-content-center align-items-center text-white text-center">
-  <div class="container px-3">
-    <h1 class="display-5 mb-3">
-      <i class="fas fa-book-reader me-2"></i> Welcome to CRUD Book!
-    </h1>
-    <p class="lead">Manage your books and favorite quotes easily 📚</p>
-  </div>
+<div class="container text-center py-5 mt-5 pt-5">
+  <!-- <h1 class="mb-4">
+    📖 Welcome to CRUD Book
+  </h1> -->
+  <h1 class="display-5 mb-3">
+    <i class="fas fa-book-reader me-2"></i> Welcome to CRUD Book!
+  </h1>
+  <p class="lead mb-4">Easily manage your books and favorite quotes.</p>
+
+  <a routerLink="/books/add" class="btn btn-success btn-lg">
+    <fa-icon [icon]="'plus'"></fa-icon> Add New Book
+  </a>
 </div>
