@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Book } from '../../models/book.model';
-import { BookService } from '../../services/book.service';
 import { RouterModule } from '@angular/router';
+import { MOCK_BOOKS } from '../../data/mock-books';
+import { Book } from '../../models/book.model';
 
 declare var bootstrap: any;
 
@@ -13,7 +13,7 @@ declare var bootstrap: any;
   standalone: true,
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css'],
-  imports: [CommonModule, FontAwesomeModule, RouterModule] // ✅ RouterModule 추가
+  imports: [CommonModule, FontAwesomeModule, RouterModule],
 })
 export class BooksComponent {
   books: Book[] = [];
@@ -23,12 +23,9 @@ export class BooksComponent {
   faEdit = faEdit;
   faTrash = faTrash;
 
-  constructor(private bookService: BookService) {}
-
   ngOnInit(): void {
-    this.bookService.getBooks().subscribe((data) => {
-      this.books = data;
-    });
+    const localBooks = JSON.parse(localStorage.getItem('userBooks') || '[]') as Book[];
+    this.books = [...MOCK_BOOKS, ...localBooks];
   }
 
   openModal(book: Book): void {
