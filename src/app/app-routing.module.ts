@@ -9,7 +9,7 @@ import { QuotesComponent } from './pages/quotes/quotes.component';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'books', component: BooksComponent },
-  { path: 'books/add', component: BooksFormComponent },
+  { path: 'add-book', component: BooksFormComponent },
   { path: 'quotes', component: QuotesComponent }
 ];
 

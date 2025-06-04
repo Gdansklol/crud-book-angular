@@ -22,7 +22,7 @@ export class BooksFormComponent {
   constructor(private router: Router) {}
 
   onSubmit(): void {
-    console.log('✅ New Book Submitted:', {
+    console.log(' New Book Submitted:', {
       title: this.title,
       author: this.author,
       publishedDate: this.publishedDate,
@@ -31,7 +31,7 @@ export class BooksFormComponent {
       description: this.description,
     });
 
-    // TODO: API 호출 로직 추가 예정
-    this.router.navigate(['/books']); // 저장 후 리스트로 리디렉션
+    // TODO: API-anropslogik som ska läggas till
+    this.router.navigate(['/books']); // 
   }
 }

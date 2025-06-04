@@ -18,9 +18,4 @@ export class HomeComponent {
   constructor(library: FaIconLibrary) {
     library.addIcons(faPlus);
   }
-
-  // 선택사항: 로그 찍기
-  goToAddBook(): void {
-    console.log('📦 Redirecting to /books/add');
-  }
 }

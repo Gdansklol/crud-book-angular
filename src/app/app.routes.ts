@@ -1,12 +1,12 @@
-// src/app/app.routes.ts
 import { Routes } from '@angular/router';
-import { BooksComponent } from './pages/books/books.component';
-import { QuotesComponent } from './pages/quotes/quotes.component';
 import { HomeComponent } from './pages/home/home.component';
+import { BooksComponent } from './pages/books/books.component';
+import { BooksFormComponent } from './pages/books/books-form.component';
+import { QuotesComponent } from './pages/quotes/quotes.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },                
+  { path: '', component: HomeComponent },
   { path: 'books', component: BooksComponent },
-  { path: 'quotes', component: QuotesComponent },
-  { path: '**', redirectTo: '' }                         
+  { path: 'add-book', component: BooksFormComponent },
+  { path: 'quotes', component: QuotesComponent }
 ];
