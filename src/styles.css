@@ -1,13 +1,12 @@
-/*  Base layout structure */
+/*  HTML and body take full height and flex column */
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
 }
 
-/* Angular root component uses flex column layout */
+/*  Root Angular component layout */
 app-root {
   display: flex;
   flex-direction: column;
@@ -15,18 +14,27 @@ app-root {
 }
 
 .main-content {
-  flex-grow: 1;
+  flex: 1 0 auto;
+  background-color: #ffffff; /* Light mode default background */
+  color: #212529;
+  padding: 1rem;
 }
 
+body.dark-mode .main-content {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* Footer */
 footer.footer {
+  flex-shrink: 0;
+  width: 100%;
   background: linear-gradient(135deg, #2e7d32, #388e3c);
   color: white;
   text-align: center;
   padding: 1rem 0;
   border-top: 1px solid #222;
   margin-top: auto;
-  width: 100%;
-  flex-shrink: 0;
 }
 
 body.dark-mode footer.footer {
