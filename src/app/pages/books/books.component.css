@@ -10,3 +10,23 @@
     }
   }
   
+  /* 카드에 입체감과 확대 효과 */
+.book-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.75rem; /* 부드러운 모서리 */
+  overflow: hidden; /* 이미지 확대 시 튀어나가지 않도록 */
+}
+
+.book-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 이미지 확대 효과 */
+.book-image {
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover .book-image {
+  transform: scale(1.08);
+}
