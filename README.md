@@ -6,7 +6,7 @@
 
 ### Mitt tillvägagångssätt
 
-Jag började detta projekt helt utan tidigare erfarenhet av Angular, JWT eller .NET.
+Jag började detta projekt helt utan tidigare erfarenhet av Angular eller .NET.
 
 För att hantera detta tillämpade jag ett iterativt och agilt arbetssätt:
 
