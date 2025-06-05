@@ -5,12 +5,14 @@
     </h2>
   
     <div class="text-center mb-4">
-      <button class="btn btn-outline-primary" (click)="openModal()">
+      <button class="btn btn-outline-primary me-2" (click)="openModal()">
         <fa-icon [icon]="faQuoteLeft"></fa-icon> Add Quote
+      </button>
+      <button class="btn btn-outline-secondary" (click)="getRandomQuote()">
+        🎲 Get Random Quote
       </button>
     </div>
   
-    <!-- Quote Cards -->
     <div class="row">
       <div class="col-md-6 col-lg-4 mb-4" *ngFor="let quote of quotes; let i = index">
         <div class="card shadow-sm h-100">
@@ -27,7 +29,7 @@
         </div>
       </div>
     </div>
-
+  
     <div class="modal fade" id="addQuoteModal" tabindex="-1" aria-labelledby="addQuoteModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -49,6 +51,27 @@
                 Save Quote
               </button>
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Random Quote Modal -->
+    <div class="modal fade" id="randomQuoteModal" tabindex="-1" aria-labelledby="randomQuoteModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="randomQuoteModalLabel">Random Quote</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <blockquote class="blockquote">
+              <p class="mb-2">"{{ randomQuote.text }}"</p>
+              <footer class="blockquote-footer">{{ randomQuote.author }}</footer>
+            </blockquote>
+            <button class="btn btn-success w-100 mt-3" (click)="addRandomQuote()">
+              ➕ Add This Quote
+            </button>
           </div>
         </div>
       </div>
