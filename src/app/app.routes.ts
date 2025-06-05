@@ -15,6 +15,10 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/books/books-form.component').then(m => m.BooksFormComponent),
   },
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login.component').then(m => m.LoginComponent)
+  },
   
   
 ];

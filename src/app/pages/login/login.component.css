@@ -1,0 +1,26 @@
+
+.card {
+  border-radius: 0.75rem;
+  transition: box-shadow 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-login {
+  background: linear-gradient(135deg, #2e7d32, #388e3c);
+  color: #fff;
+  border: none;
+  max-width: 150px;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover {
+  background: linear-gradient(135deg, #388e3c, #43a047);
+  transform: scale(1.02);
+}
