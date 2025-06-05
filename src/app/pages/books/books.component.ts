@@ -5,6 +5,8 @@ import { faPlus, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { RouterModule } from '@angular/router';
 import { MOCK_BOOKS } from '../../data/mock-books';
 import { Book } from '../../models/book.model';
+import { Router } from '@angular/router';
+
 
 declare var bootstrap: any;
 
@@ -23,6 +25,8 @@ export class BooksComponent {
   faEdit = faEdit;
   faTrash = faTrash;
 
+  constructor(private router: Router) {}  // ✅ 이 위치가 정답입니다!
+
   ngOnInit(): void {
     const localBooks = JSON.parse(localStorage.getItem('userBooks') || '[]') as Book[];
     this.books = [...MOCK_BOOKS, ...localBooks];
@@ -34,6 +38,18 @@ export class BooksComponent {
     if (modalElement) {
       const modal = new bootstrap.Modal(modalElement);
       modal.show();
+    }
+  }
+
+  editBook(id: number): void {
+    this.router.navigate(['/books/edit', id]);
+  }
+
+  deleteBook(id: number): void {
+    if (confirm('Are you sure you want to delete this book?')) {
+      this.books = this.books.filter(book => book.id !== id);
+      const updatedUserBooks = this.books.filter(book => book.id > MOCK_BOOKS.length);
+      localStorage.setItem('userBooks', JSON.stringify(updatedUserBooks));
     }
   }
 }

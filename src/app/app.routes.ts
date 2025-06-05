@@ -8,5 +8,13 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'books', component: BooksComponent },
   { path: 'add-book', component: BooksFormComponent },
-  { path: 'quotes', component: QuotesComponent }
+  { path: 'quotes', component: QuotesComponent },
+  { path: 'books/edit/:id', component: BooksFormComponent }, 
+  {
+    path: 'books/edit/:id',
+    loadComponent: () =>
+      import('./pages/books/books-form.component').then(m => m.BooksFormComponent),
+  },
+  
+  
 ];

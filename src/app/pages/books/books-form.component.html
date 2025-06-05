@@ -89,12 +89,12 @@
       </fieldset>
   
       <button
-        type="submit"
-        class="btn btn-success"
-        [disabled]="!bookForm.form.valid || !isImageProvided"
-      >
-        Save
-      </button>
+      type="submit"
+      class="btn btn-success"
+      [disabled]="!bookForm.form.valid || !isImageProvided">
+      {{ editMode ? 'Update' : 'Save' }}
+    </button>
+    
     </form>
   </main>
   
