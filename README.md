@@ -1,5 +1,29 @@
 # Responsiv CRUD-applikation med tokenhantering
 
+![Angular](https://img.shields.io/badge/Angular-18-red)
+![MadeWith](https://img.shields.io/badge/made%20with-TypeScript-blue)
+![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)
+
+### Mitt tillvägagångssätt
+
+Jag började detta projekt helt utan tidigare erfarenhet av Angular, JWT eller .NET.
+
+För att hantera detta tillämpade jag ett iterativt och agilt arbetssätt:
+
+- **Iterativ utveckling:** Jag delade upp varje krav i små, hanterbara steg.
+- **Fail-fast-principen:** Jag testade snabbt, misslyckades snabbt, och lärde mig snabbt.
+- **Kontinuerliga förbättringar:** Designen förbättrades stegvis med feedback och testning.
+- **Responsiv utveckling:** Jag säkerställde att varje komponent fungerade på mobil, surfplatta och desktop.
+- **Debugging & refactoring:** Jag identifierade problem i realtid och refaktorerade komponenter där det behövdes.
+
+### Deployment (Vercel)
+
+Projektet är kopplat till ett GitHub-repository och deployas via [Vercel](https://vercel.com/).
+
+- CI/CD: varje push till `main` uppdaterar deployment automatiskt
+- Framework: Angular 18
+- Output path: `dist/crud-temp`
+
 ## Byggd med Angular 18 för front-end
 
 ### Krav
@@ -103,4 +127,3 @@ src/
 
 6. Angular Router – klientbaserad navigation
 
-###  Sammanfattning
