@@ -1,15 +1,1 @@
-{
-  "projectId": "prj_SBQRyuWDlkj2UMYDiukXvn3QU30S",
-  "orgId": "team_Og58ZZjNJUR0N14zzLZeEg4m",
-  "settings": {
-    "createdAt": 1749175150587,
-    "framework": "angular",
-    "devCommand": null,
-    "installCommand": null,
-    "buildCommand": null,
-    "outputDirectory": null,
-    "rootDirectory": null,
-    "directoryListing": false,
-    "nodeVersion": "22.x"
-  }
-}
+{"projectId":"prj_SZu5p3gKcYPqIXKZsOmIg1FnLnKW","orgId":"team_Og58ZZjNJUR0N14zzLZeEg4m"}
