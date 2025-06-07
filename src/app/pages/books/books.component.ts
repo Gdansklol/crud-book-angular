@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faPlus, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { RouterModule } from '@angular/router';
+import { faPlus, faEdit, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
+import { RouterModule, Router } from '@angular/router';
 import { MOCK_BOOKS } from '../../data/mock-books';
 import { Book } from '../../models/book.model';
-import { Router } from '@angular/router';
-
 
 declare var bootstrap: any;
 
@@ -24,12 +22,18 @@ export class BooksComponent {
   faPlus = faPlus;
   faEdit = faEdit;
   faTrash = faTrash;
+  faUser = faUser;
 
-  constructor(private router: Router) {}  
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     const localBooks = JSON.parse(localStorage.getItem('userBooks') || '[]') as Book[];
     this.books = [...MOCK_BOOKS, ...localBooks];
+
+    const currentUser = sessionStorage.getItem('currentUser');
+    if (!currentUser) {
+      this.router.navigate(['/login']);
+    }
   }
 
   openModal(book: Book): void {
@@ -51,5 +55,10 @@ export class BooksComponent {
       const updatedUserBooks = this.books.filter(book => book.id > MOCK_BOOKS.length);
       localStorage.setItem('userBooks', JSON.stringify(updatedUserBooks));
     }
+  }
+
+  logout(): void {
+    sessionStorage.removeItem('currentUser');
+    this.router.navigate(['/']);
   }
 }
