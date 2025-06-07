@@ -25,7 +25,7 @@ export class BooksComponent {
   faEdit = faEdit;
   faTrash = faTrash;
 
-  constructor(private router: Router) {}  // ✅ 이 위치가 정답입니다!
+  constructor(private router: Router) {}  
 
   ngOnInit(): void {
     const localBooks = JSON.parse(localStorage.getItem('userBooks') || '[]') as Book[];
