@@ -1,17 +1,7 @@
 {
-  "builds": [
-    {
-      "src": "angular.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "outputDirectory": "dist/crud-temp"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/crud-temp",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
