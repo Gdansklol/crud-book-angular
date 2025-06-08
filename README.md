@@ -4,126 +4,97 @@
 ![MadeWith](https://img.shields.io/badge/made%20with-TypeScript-blue)
 ![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)
 
-### Mitt tillvägagångssätt
+##  Live Demo
 
-Jag började detta projekt helt utan tidigare erfarenhet av Angular eller .NET.
+- 🔗 [Frontend på Vercel](https://crud-book-angular.vercel.app)  
+- 🔗 [Swagger (API-dokumentation)](https://dotnet-backend-production-9189.up.railway.app/swagger)  
+- 🔗 [GET alla böcker](https://dotnet-backend-production-9189.up.railway.app/api/books)
 
-För att hantera detta tillämpade jag ett iterativt och agilt arbetssätt:
+> Frontend är kopplad till ett REST API byggt med .NET 9 och deployat via Railway.
 
-- **Iterativ utveckling:** Jag delade upp varje krav i små, hanterbara steg.
-- **Fail-fast-principen:** Jag testade snabbt, misslyckades snabbt, och lärde mig snabbt.
-- **Kontinuerliga förbättringar:** Designen förbättrades stegvis med feedback och testning.
-- **Responsiv utveckling:** Jag säkerställde att varje komponent fungerade på mobil, surfplatta och desktop.
-- **Debugging & refactoring:** Jag identifierade problem i realtid och refaktorerade komponenter där det behövdes.
+---
 
-### Deployment (Vercel)
+##  Mitt arbetssätt
 
-Projektet är kopplat till ett GitHub-repository och deployas via [Vercel](https://vercel.com/).
+-  Lärde mig Angular och .NET från grunden
+-  Iterativ utveckling: små steg, test tidigt
+-  Testade varje komponent responsivt (mobil, tablet, desktop)
+-  Refaktorering och förbättringar genom feedback
+-  Enkel mock-backend fallback vid API-nedtid
 
-- CI/CD: varje push till `main` uppdaterar deployment automatiskt
-- Framework: Angular 18
-- Output path: `dist/crud-temp`
+---
 
-## Byggd med Angular 18 för front-end
+##  Funktioner
 
-### Krav
-- En lista över böcker (CRUD-funktionalitet)
+-  Full CRUD (GET, POST, PUT, DELETE)
+-  Lokal tokenhantering via `localStorage,sessionStorage`
+-  Lista och formulär för böcker
+-  Responsiv UI med Bootstrap & Font Awesome
+-  Routing via Angular Router
 
-- Formulär för att lägga till, redigera och radera böcker
+---
+## 🛠️ Teknisk stack
 
-- Tokenbaserad autentisering (JWT)
+| Layer       | Teknik                         |
+|-------------|---------------------------------|
+| Frontend    | Angular 18, TypeScript          |
+| Backend     | .NET 9 REST API (mock-data)     |
+| Hosting     | Vercel (frontend), Railway (API)|
+| UI          | Bootstrap 5, Font Awesome       |
 
-- Separat vy för "Mina citat"
 
-- Responsiv design för alla skärmstorlekar
+---
 
-- Användning av Bootstrap och Font Awesome för layout och UI
-
-### Setup & Deploy – Tekniska steg
-
-1. Angular CLI installation
-```bash
-npm install -g @angular/cli
-
-```
-Eller installera projektet lokalt:
-
-```bash
-npx @angular/cli@latest new crud-temp --routing --style=css
-
-```
-> OBS! Du kan inte skapa direkt i den aktuella katalogen (.). 
-Du måste alltid skapa en ny mapp, flytta till den och sedan skapa.
-
-2. Ansluter Lokalt Git och GitHub
-
-```bash
-git init
-git remote add origin https://github.com/DittAnvändarnamn/ditt-repo.git
-git add .
-git commit -m "init commit"
-git push -u origin main
-
-```
-> Om felet: remote origin already exists eller repository not found 
-uppstår, kontrollera med git remote -v och korrigera.
-
-3. Köra Angular-utvecklingsservern
-
-```bash
-npm install
-npm start
-
-Öppna i webbläsaren: http://localhost:4200
-```
-
-4. Deploy i Varcel 
-```bash
-npm run build
-```
-
-- Använd dist/-katalogen efter build.
-
-- Åtkomst till https://vercel.com
-
-- Anslut GitHub-repository
-
-- Framework: Välj Angular
-
-- Build-kommando: ng build
-
-- Output-katalog: dist/[projektnamn]
-
-### Struktur
+## 🏗️ Projektstruktur
 
 ```bash
 src/
-│
 ├── app/
-│   ├── components/       # UI-komponenter
-│   ├── pages/            # Bokvy, citatsida
-│   ├── services/         # API- och auth-tjänster
-│   ├── app.routes.ts     # Routing
-│   └── app.component.ts  # Rotkomponent
-│
-├── assets/               # Bilder, ikoner
-├── environments/         # API URL etc.
-└── main.ts               # Startpunkt
-
+│   ├── components/    # UI-komponenter (form, lista)
+│   ├── pages/         # vyer (book-list, auth)
+│   ├── services/      # book.service.ts, auth.service.ts
+│   └── app.routes.ts
+├── assets/
+└── environments/
 ```
 
-### Utmaning & lärande
+## Setup & Deployment
+### Installera & kör lokalt
+```bash
 
-### Technologies & Funktionalitet
-1. Angular 18 – komponentbaserad UI
+npm install
+npm start
+```
+- Gå till: http://localhost:4200
 
-2. Bootstrap – responsiv layout
+### Deploy med Vercel
+```bash
 
-3. Font Awesome – UI-ikoner
+npm run build
 
-4. JWT – autentisering
+```
+- Output: dist/crud-temp
+- Anslut till GitHub och konfigurera via vercel.com
+- Inställningar:
 
-5. RxJS – datahantering
+- Framework: Angular
 
-6. Angular Router – klientbaserad navigation
+- Build: ng build
+
+- Output folder: dist/crud-temp
+
+### Lärdomar & Utmaningar
+- Första gången med Angular och .NET – brant men lärorik kurva
+
+- Skapa fungerande API + Swagger + mock-backend
+
+- Hantera responsivitet och forms med validering
+
+###  Framtida förbättringar
+- JWT-autentisering (planeras)
+
+- MongoDB-anslutning i produktion
+
+- Pagination och sökning i boklistan
+
 
